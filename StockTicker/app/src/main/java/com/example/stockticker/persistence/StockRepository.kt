@@ -4,9 +4,10 @@ import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.BroadcastChannel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.*
+import javax.inject.Inject
 import kotlin.coroutines.CoroutineContext
 
-class StockRepository : CoroutineScope {
+class StockRepository @Inject constructor() : CoroutineScope {
 
     private val job = Job()
     override val coroutineContext: CoroutineContext

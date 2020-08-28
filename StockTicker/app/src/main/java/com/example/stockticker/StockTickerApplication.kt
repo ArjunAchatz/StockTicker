@@ -1,21 +1,10 @@
 package com.example.stockticker
 
 import android.app.Application
-import org.koin.android.ext.koin.androidContext
-import org.koin.core.context.startKoin
+import dagger.hilt.android.HiltAndroidApp
 
 // parijat@fireworkhq.com ;
 // deborah@fireworkhq.com
 
-class StockTickerApplication : Application() {
-
-    override fun onCreate() {
-        super.onCreate()
-
-        startKoin {
-            androidContext(this@StockTickerApplication)
-            modules(appModules)
-        }
-    }
-
-}
+@HiltAndroidApp
+class StockTickerApplication : Application()
