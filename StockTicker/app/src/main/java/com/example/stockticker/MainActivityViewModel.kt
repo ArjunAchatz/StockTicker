@@ -1,5 +1,6 @@
 package com.example.stockticker
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -9,16 +10,15 @@ import com.example.stockticker.view.MainActivityUiModel
 import com.example.stockticker.view.StockUiModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
-import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import java.math.BigDecimal
 import java.math.RoundingMode
-import kotlin.math.round
+import javax.inject.Inject
 
 @FlowPreview
 @ExperimentalCoroutinesApi
-class MainActivityViewModel(
+class MainActivityViewModel @Inject constructor(
     private val stockRepository: StockRepository
 ) : ViewModel() {
 
